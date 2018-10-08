@@ -59,6 +59,9 @@ a {
         font-family: $font-helvet-light;
         font-size: 18px;
         letter-spacing: .5px;
+        &__container {
+          white-space: nowrap;
+        }
         p {
           margin-top: 50px;
           margin-bottom: 20px;
