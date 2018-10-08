@@ -1,0 +1,278 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  color: $link-blue;
+  font-family: $font-helvet-medium;
+  text-decoration: none;
+  @include transition(.2s);
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-bottom: 1px solid $link-blue;
+    @include transition(.2s);
+  }
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  @include linear-gradient(113deg, #6ba8dc, #5449b6);
+  .container-helper {
+    position: absolute;
+    width: 55%;
+    height: 100vh;
+    bottom: 0;
+    text-align: center;
+    &:before {
+      content: '';
+      background: url("./../img/bg.svg") no-repeat;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      background-position: 0 100%;
+    }
+    article {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 10;
+      @include translate(-50%, -50%);
+      .logo {
+        img {
+          width: 40px;
+          margin-right: 10px;
+        }
+        span {
+          font-family: $font-museo;
+          color: $white;
+          font-size: 25px;
+          opacity: .4;
+        }
+      }
+      .help {
+        color: $white;
+        font-family: $font-helvet-light;
+        font-size: 18px;
+        letter-spacing: .5px;
+        p {
+          margin-top: 50px;
+          margin-bottom: 20px;
+        }
+        a {
+          text-transform: uppercase;
+          color: $white;
+          margin-right: 10px;
+          margin-left: 10px;
+          text-decoration: none;
+          font-family: $font-helvet-medium;
+          font-size: 15px;
+          letter-spacing: normal;
+          background-color: rgba(255,255,255,.2);
+          padding: 10px 20px;
+          border-radius: 4px;
+          box-shadow: 0 2px 5px rgba(0,0,0,.1);
+          @include transition(.2s);
+          &:hover {
+            box-shadow: 0 5px 10px rgba(0,0,0,.3);
+            @include transition(.2s);
+          }
+        }
+      }
+    }
+  }
+  .container-sign-in {
+    position: absolute;
+    width: 45%;
+    height: 100vh;
+    right: 0;
+    background: $dark-blue;
+    &:before {
+      content: '';
+      background: url("./../img/edge_1_dark.svg") no-repeat;
+      position: absolute;
+      right: 100%;
+      left: calc(-100% + 1px);
+      top: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100%;
+      background-size: contain;
+      background-position: top right;
+    }
+    .article-sign {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 10;
+      color: $white;
+      font-family: $font-helvet-light;
+      font-size: 16px;
+      @include translate(-50%, -50%);
+      h1 {
+        font-family: $font-helvet-light;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        margin-left: 15px;
+      }
+      span {
+        color: rgba(255,255,255,.5);
+        font-size: 16px;
+      }
+      form {
+        margin-top: 30px;
+        .form-control {
+          position: relative;
+          input {
+            margin-top: 30px;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $link-blue;
+            padding-bottom: 20px;
+            outline: none;
+          }
+          .valid {
+            border-bottom: 1px solid $green;
+          }
+          .invalid {
+            border-bottom: 1px solid $red;
+          }
+          p {
+            position: absolute;
+            right: -140px;
+            max-width: 115px;
+            top: 10px;
+            display: block;
+            background-color: $white;
+            color: $dark-blue;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: $font-helvet-light;
+            &:before {
+              content: '';
+              background-color: $white;
+              height: 10px;
+              position: absolute;
+              width: 10px;
+              margin-top: 10px;
+              left: -5px;
+              @include rotate(45deg);
+            }
+          }
+        }
+        button {
+          display: inline-block;
+          width: 100%;
+          margin-top: 30px;
+          text-transform: uppercase;
+          font-family: $font-helvet-bold;
+          font-size: 14px;
+          @include linear-gradient(-14deg, #54c3fe, #127ef9);
+          border: none;
+          outline: none;
+          padding: 18px 25px;
+          border-radius: 4px;
+          img {
+            width: 18px;
+            padding-left: 10px;
+          }
+          &:hover {
+            img {
+              animation: move .8s infinite;
+              animation-direction: alternate;
+              @keyframes move{
+                from {
+                  padding-left: 10px;
+                }
+                to {
+                  padding-left: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .forgot-pass {
+        display: inline-block;
+        margin-top: 50px;
+        a {
+          margin-left: 5px;
+        }
+      }
+    }
+    #forgotPassword {
+      display: none;
+      h1 {
+        margin-left: 0;
+      }
+      > a {
+        position: absolute;
+        display: block;
+        top: -100px;
+        left: 0;
+        &:hover {
+          border-bottom: 1px solid transparent;
+          left: -5px;
+        }
+        img {
+          width: 30px;
+          cursor: pointer;
+        }
+      }
+    }
+    #chooseProject {
+      display: none;
+      text-align: center;
+      h1 {
+        margin-left: 0;
+      }
+      #content {
+        position: relative;
+      }
+      #scrollbar {
+        position: absolute;
+        height: 30px;
+        width: 7px;
+        right: -33px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      #controls {
+        list-style-type: none;
+        margin-top: 50px;
+        display: block;
+        max-height: 200px;
+        overflow-y: auto;
+        width: 100%;
+        text-align: center;
+        margin-left: -18px;
+        min-width: 300px;
+        li {
+          border-bottom: 1px solid rgba(238,240,241,.3);
+          padding: 20px;
+          a {
+            color: rgba(255,255,255,.5);
+            font-family: $font-helvet-light;
+            @include transition(.2s);
+            &:hover {
+              border-bottom: 1px solid transparent;
+              font-family: $font-helvet-bold;
+              color: $white;
+              @include transition(.3s);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./../css/main.min.css" />
+</head>
+<body>
+<div class="wrapper">
+    <div class="container-helper">
+        <article>
+            <div class="logo">
+                <img src="./../img/logo.png" alt="" />
+                <span>Technologies</span>
+            </div>
+            <div class="help">
+                <p>Get how-to help and instructions or specific features in </p>
+                <a href="#">help center</a>
+                <span>or</span>
+                <a href="#">support</a>
+            </div>
+        </article>
+    </div>
+    <div class="container-sign-in">
+        <article id="signIn" class="article-sign">
+            <h1>Welcome back</h1>
+            <span>Sign in to continue to IO Technologies.</span>
+            <form id="login" action="#">
+                <div class="form-control">
+                    <input type="text" id="email" placeholder="Your email" autocomplete="off">
+                </div>
+                <div class="form-control">
+                <input type="password" id="password" placeholder="Password">
+                </div>
+                <button id="submitLogin">Log In<img src="./../img/right-arrow.png"></button>
+            </form>
+            <span class="forgot-pass">Forgot your password?<a href="#" id="resetLink">Reset</a></span>
+        </article>
+        <article id="forgotPassword" class="article-sign">
+            <a href="#" id="back"><img src="./../img/left-arrow.png"></a>
+            <h1>Forgot password?</h1>
+            <form id="pass" action="#">
+                <div class="form-control">
+                <input type="text" data-name="email" placeholder="Enter your email">
+                </div>
+                <button>Send me instructions</button>
+            </form>
+        </article>
+        <article id="chooseProject" class="article-sign">
+            <h1>Hi, Nikita!</h1>
+            <span>Please, choose your project.</span>
+            <div id="content">
+                <div id="scrollbar"></div>
+                <ul id="controls">
+                    <li><a href="#">Flirchi</a></li>
+                    <li><a href="#">io</a></li>
+                    <li><a href="#">company name</a></li>
+                    <li><a href="#">facenews.com</a></li>
+                    <li><a href="#">Flirchi</a></li>
+                    <li><a href="#">io</a></li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</div>
+<script src="./../javascript/index.js"></script>
+</body>
+</html>
